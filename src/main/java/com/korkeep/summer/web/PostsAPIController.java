@@ -17,7 +17,7 @@ public class PostsAPIController {
         return postsService.save(requestDTO);
     }
 
-    @PutMapping("/api/v1/posts/{id}")
+    @PostMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDTO requestDTO){
         return postsService.update(id, requestDTO);
     }

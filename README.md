@@ -1,6 +1,5 @@
-## Summer
-> 한여름에 Spring 뽀개버리기 🏝  
-> Spring Boot와 AWS로 구현하는 웹 서비스 ✨  
+## Summer 🏝
+한여름에 Spring 뽀개버리기 ヽ(✿ﾟ▽ﾟ)ノ
 
 ### Spring Architecture
 > ![layer](https://user-images.githubusercontent.com/20378368/128653677-2b58b2e6-e170-49dd-856b-a0ef417e0f40.png)
@@ -58,3 +57,5 @@ select * from posts;
 - Dirty Checking: Transaction 안에서 Entity 상태의 변경에 대한 검사
 - Dirty Checking은 영속성 컨텍스트(Persistence Context)가 관리하는 Entity에만 적용
 - JPA는 최초 조회 상태(Snapshot)에서 변화가 있는 Entity 객체를 DB에 자동으로 반영
+<br/>
+
