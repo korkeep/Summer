@@ -2,7 +2,7 @@
 > 한여름에 Spring 뽀개버리기 🏝  
 > Spring Boot와 AWS로 구현하는 웹 서비스 ✨  
 
-### Spring Layer
+### Spring Architecture
 > ![layer](https://user-images.githubusercontent.com/20378368/128653677-2b58b2e6-e170-49dd-856b-a0ef417e0f40.png)
 #### Web Layer
 - 브라우저상의 웹 클라이언트의 요청 및 응답을 처리
@@ -39,6 +39,7 @@
 | Role | Java 기반 저용량 RDBMS | 직접 SQL을 작성하지 않아도 자동 생성 | 직접 SQL을 작성하여 객체와 매핑 |
 | Pos. | Web Browser 기반 콘솔모드</br> JDBC API 지원 | 객체중심적(ORM) 데이터 관리</br> Entity 변경 시 관련 쿼리 자동 반영 | SQL 쿼리를 직접 작성하여 최적화</br> Entity에 종속받지 않고 최적화된 쿼리 구현 |
 | Con. | 메모리에 데이터 저장 → 휘발성 | 복잡한 연산 처리의 어려움</br> 고도화될수록 학습 곡선이 높아짐 | 스키마 변경 시 SQL 쿼리 수정 필요</br> DB에 종속적인 쿼리문 발생 |
+<br/>
 
 ### H2 Database
 - Link: http://localhost:8080/h2-console  
@@ -50,10 +51,10 @@ select * from posts;
 ```
 > ![insert-query](https://user-images.githubusercontent.com/20378368/128666004-485d8523-515c-408e-8b69-88f50d855577.png)  
 > ![insert-result](https://user-images.githubusercontent.com/20378368/128665276-2a756081-49b1-4ece-9547-11e6702b201c.png)
+<br/>
 
 ### Dirty Checking
-- Dirty: 상태의 변화가 생긴 정도
-- Dirty Checking: 상태가 변경된 부분에 대한 검사
-- Dirty Checking은 영속성 컨텍스트가 관리하는 Entity에만 적용
-- 준영속 / 비영속 상태의 Entity는 Dirty Checking 대상에 포함되지 않음
+> ![DC](https://user-images.githubusercontent.com/20378368/128669641-50a3cfc5-c540-461c-9033-e907ff527402.png)
+- Dirty Checking: Transaction 안에서 Entity 상태의 변경에 대한 검사
+- Dirty Checking은 영속성 컨텍스트(Persistence Context)가 관리하는 Entity에만 적용
 - JPA는 최초 조회 상태(Snapshot)에서 변화가 있는 Entity 객체를 DB에 자동으로 반영
