@@ -11,7 +11,9 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+// RunWith: JUnit 이외의 다른 실행자 실행 (SpringRunner)
 @RunWith(SpringRunner.class)
+// SpringBootTest: JPA 기능까지 한번에 테스트하기 위함
 @SpringBootTest
 public class PostRepositoryTest {
     @Autowired
@@ -24,7 +26,7 @@ public class PostRepositoryTest {
     }
 
     @Test
-    public void getContents(){
+    public void getContentsTest(){
         String title = "테스트 게시글";
         String content = "테스트 본문";
 
@@ -38,6 +40,8 @@ public class PostRepositoryTest {
         // postRepository.findAll: postsRepository → 모든 데이터를 조회해오는 메소드
         List<Posts> postsList = postsRepository.findAll();
 
+        // assertThat: 대상을 인자로 받아 검증
+        // assertj: 테스트 검증을 위한 라이브러리
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);

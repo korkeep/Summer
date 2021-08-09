@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 @Getter
 // RequiredArgsConstructor: final 필드가 포함된 경우의 생성자
 @RequiredArgsConstructor
-public class ResponseDto {
+public class HelloResponseDTO {
     private final String name;
     private final int amount;
 }

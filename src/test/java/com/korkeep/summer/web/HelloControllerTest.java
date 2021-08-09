@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 import static org.hamcrest.Matchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,10 +15,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 // RunWith: JUnit 이외의 다른 실행자 실행 (SpringRunner)
 @RunWith(SpringRunner.class)
-
 // WebMvcTest: Web 관련 Spring Test Annotation
 @WebMvcTest
-public class ControllerTest {
+public class HelloController {
     // Autowired: Bean 주입
     @Autowired
     // MockMvc: HTTP Get, Post 등 API 테스트
@@ -34,7 +32,7 @@ public class ControllerTest {
     }
 
     @Test
-    public void returnHelloDto() throws Exception{
+    public void returnHelloDTOTest() throws Exception{
         String name = "hello";
         int amount = 1000;
 

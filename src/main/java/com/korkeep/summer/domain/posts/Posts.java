@@ -13,6 +13,8 @@ import javax.persistence.*;
 // NoArgsConstructor: 기본 생성자 자동 추가
 @NoArgsConstructor
 // Entity: 테이블과 링크될 클래스
+/* Entity 클래스를 Request, Response 클래스로 사용하지 말 것 */
+/* Entity 클래스와 DTO 클래스는 반드시 분리하여 사용 */
 @Entity
 public class Posts {
     // Id: 해당 테이블의 PK 필드
@@ -35,5 +37,10 @@ public class Posts {
         this.title = title;
         this.content = content;
         this.author = author;
+    }
+
+    public void update(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
