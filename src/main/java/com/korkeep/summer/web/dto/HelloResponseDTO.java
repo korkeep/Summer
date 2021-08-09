@@ -1,4 +1,4 @@
-package com.korkeep.summer.web.web.dto;
+package com.korkeep.summer.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

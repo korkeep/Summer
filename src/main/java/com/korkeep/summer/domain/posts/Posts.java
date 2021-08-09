@@ -1,5 +1,6 @@
 package com.korkeep.summer.domain.posts;
 
+import com.korkeep.summer.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import javax.persistence.*;
 /* Entity 클래스를 Request, Response 클래스로 사용하지 말 것 */
 /* Entity 클래스와 DTO 클래스는 반드시 분리하여 사용 */
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
     // Id: 해당 테이블의 PK 필드
     @Id
     // GeneratedValue: PK의 생성 규칙

@@ -1,6 +1,6 @@
-package com.korkeep.summer.web.web;
+package com.korkeep.summer.web;
 
-import com.korkeep.summer.web.web.dto.HelloResponseDTO;
+import com.korkeep.summer.web.dto.HelloResponseDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,7 +17,7 @@ public class HelloController {
     // GetMapping: HTTP Get 메소드를 받을 수 있는 API 생성
     // RequestParam: 외부 API 파라미터를 저장
     @GetMapping("/hello/dto")
-    public HelloResponseDTO dto(@RequestParam("name") String name, @RequestParam("amount") int amount){
+    public HelloResponseDTO DTO(@RequestParam("name") String name, @RequestParam("amount") int amount){
         return new HelloResponseDTO(name, amount);
     }
 }
