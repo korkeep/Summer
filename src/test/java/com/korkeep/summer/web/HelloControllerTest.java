@@ -17,7 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 // WebMvcTest: Web 관련 Spring Test Annotation
 @WebMvcTest
-public class HelloController {
+public class HelloControllerTest {
     // Autowired: Bean 주입
     @Autowired
     // MockMvc: HTTP Get, Post 등 API 테스트

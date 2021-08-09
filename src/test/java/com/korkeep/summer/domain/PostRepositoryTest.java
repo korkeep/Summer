@@ -1,5 +1,7 @@
-package com.korkeep.summer.domain.posts;
+package com.korkeep.summer.domain;
 
+import com.korkeep.summer.domain.posts.Posts;
+import com.korkeep.summer.domain.posts.PostsRepository;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -45,5 +49,27 @@ public class PostRepositoryTest {
         Posts posts = postsList.get(0);
         assertThat(posts.getTitle()).isEqualTo(title);
         assertThat(posts.getContent()).isEqualTo(content);
+    }
+
+    @Test
+    public void BaseTimeEntityBuild(){
+        LocalDateTime now = LocalDateTime.of(2021, 8, 9, 0, 0, 0);
+
+        // postRepository.save: postsRepository → insert, update 쿼리 실행
+        postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        // postRepository.findAll: postsRepository → 모든 데이터를 조회해오는 메소드
+        List<Posts> postsList = postsRepository.findAll();
+
+        // assertThat: 대상을 인자로 받아 검증
+        // assertj: 테스트 검증을 위한 라이브러리
+        Posts posts = postsList.get(0);
+        System.out.println(">> createDate=" + posts.getCreatedDate() + ", modifiedDate=" + posts.getModifiedDate());
+        assertThat(posts.getCreatedDate()).isAfter(now);
+        assertThat(posts.getModifiedDate()).isAfter(now);
     }
 }
