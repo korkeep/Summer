@@ -1,5 +1,5 @@
 ## Summer 🏝
-한여름에 Spring 뽀개버리기 ヽ(✿ﾟ▽ﾟ)ノ
+한여름에 Spring 뽀개버리기 (●'◡'●)
 
 ### Spring Architecture
 > ![layer](https://user-images.githubusercontent.com/20378368/128653677-2b58b2e6-e170-49dd-856b-a0ef417e0f40.png)
