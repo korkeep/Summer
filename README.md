@@ -59,3 +59,5 @@ select * from posts;
 - JPA는 최초 조회 상태(Snapshot)에서 변화가 있는 Entity 객체를 DB에 자동으로 반영
 <br/>
 
+### JPA, Hibernate, Spring Data JPA(Repository)
+> ![JPA-Hibernate-Repository](https://user-images.githubusercontent.com/20378368/128971468-ffb03907-7f52-49d6-b4e2-62b37e9944c2.png)
