@@ -40,7 +40,7 @@
 | Con. | 메모리에 데이터 저장 → 휘발성 | 복잡한 연산 처리의 어려움</br> 고도화될수록 학습 곡선이 높아짐 | 스키마 변경 시 SQL 쿼리 수정 필요</br> DB에 종속적인 쿼리문 발생 |
 <br/>
 
-### H2 Database
+### H2 Database (for Testing)
 - Link: http://localhost:8080/h2-console  
 - JDBC URL: jdbc:h2:mem:testdb
 > ![H2](https://user-images.githubusercontent.com/20378368/128664766-9efe5f0a-dffd-4b7d-a243-1916bcf63446.png)
@@ -59,7 +59,7 @@ select * from posts;
 - JPA는 최초 조회 상태(Snapshot)에서 변화가 있는 Entity 객체를 DB에 자동으로 반영
 <br/>
 
-### JPA, Hibernate, Spring Data JPA(Repository)
+### JPA, Hibernate, Spring Data JPA (Repository)
 > ![JPA-Hibernate-Repository](https://user-images.githubusercontent.com/20378368/128971468-ffb03907-7f52-49d6-b4e2-62b37e9944c2.png)
 
 ### Enum Class
@@ -84,4 +84,7 @@ update user set role = 'USER';
 select * from user;
 ```
 > ![image](https://user-images.githubusercontent.com/20378368/130082102-66112867-975f-4c6c-8b7b-036c32be89cc.png)
-
+```sql
+select * from spring_session;
+```
+> ![image](https://user-images.githubusercontent.com/20378368/130087795-004aff1a-34ce-4de1-8837-cf11ec7ce424.png)
