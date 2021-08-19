@@ -1,11 +1,14 @@
 package com.korkeep.summer.web;
 
 import com.korkeep.summer.service.posts.PostsService;
+import com.korkeep.summer.web.dto.PostsListResponseDTO;
 import com.korkeep.summer.web.dto.PostsResponseDTO;
 import com.korkeep.summer.web.dto.PostsSaveRequestDTO;
 import com.korkeep.summer.web.dto.PostsUpdateRequestDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -17,7 +20,7 @@ public class PostsAPIController {
         return postsService.save(requestDTO);
     }
 
-    @PostMapping("/api/v1/posts/{id}")
+    @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDTO requestDTO){
         return postsService.update(id, requestDTO);
     }
@@ -31,5 +34,10 @@ public class PostsAPIController {
     @GetMapping("/api/v1/posts/{id}")
     public PostsResponseDTO findById(@PathVariable Long id){
         return postsService.findById(id);
+    }
+
+    @GetMapping("/api/v1/posts/list")
+    public List<PostsListResponseDTO> findAll() {
+        return postsService.findAllDesc();
     }
 }

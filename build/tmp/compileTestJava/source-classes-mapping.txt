@@ -1,6 +1,10 @@
-com/korkeep/summer/web/ControllerTest.java
- com.korkeep.summer.web.ControllerTest
-com/korkeep/summer/web/dto/ResponseDtoTest.java
- com.korkeep.summer.web.dto.ResponseDtoTest
-com/korkeep/summer/domain/posts/PostRepositoryTest.java
- com.korkeep.summer.domain.posts.PostRepositoryTest
+com/korkeep/summer/web/IndexControllerTest.java
+ com.korkeep.summer.web.IndexControllerTest
+com/korkeep/summer/web/dto/HelloResponseDTOTest.java
+ com.korkeep.summer.web.dto.HelloResponseDTOTest
+com/korkeep/summer/domain/PostRepositoryTest.java
+ com.korkeep.summer.domain.PostRepositoryTest
+com/korkeep/summer/web/PostsAPIControllerTest.java
+ com.korkeep.summer.web.PostsAPIControllerTest
+com/korkeep/summer/web/HelloControllerTest.java
+ com.korkeep.summer.web.HelloControllerTest

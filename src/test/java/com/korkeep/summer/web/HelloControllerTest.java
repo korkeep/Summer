@@ -1,9 +1,13 @@
 package com.korkeep.summer.web;
 
+import com.korkeep.summer.config.auth.SecurityConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -16,7 +20,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 // RunWith: JUnit 이외의 다른 실행자 실행 (SpringRunner)
 @RunWith(SpringRunner.class)
 // WebMvcTest: Web 관련 Spring Test Annotation
-@WebMvcTest
+// SecurityConfig: WebMvcTest 스캔 대상을 SecurityConfig(Repository, Service, Component)까지 포함
+@WebMvcTest(controllers = HelloController.class,
+        excludeFilters = {
+                @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = SecurityConfig.class)
+        }
+)
 public class HelloControllerTest {
     // Autowired: Bean 주입
     @Autowired
@@ -24,6 +33,7 @@ public class HelloControllerTest {
     private MockMvc mvc;
 
     @Test
+    @WithMockUser(roles="USER")
     public void returnHello() throws Exception{
         String hello = "hello";
         mvc.perform(get("/hello"))              // /hello 주소로 HTTP get 요청
@@ -32,6 +42,7 @@ public class HelloControllerTest {
     }
 
     @Test
+    @WithMockUser(roles="USER")
     public void returnHelloDTOTest() throws Exception{
         String name = "hello";
         int amount = 1000;
