@@ -61,3 +61,27 @@ select * from posts;
 
 ### JPA, Hibernate, Spring Data JPA(Repository)
 > ![JPA-Hibernate-Repository](https://user-images.githubusercontent.com/20378368/128971468-ffb03907-7f52-49d6-b4e2-62b37e9944c2.png)
+
+### Enum Class
+- 서로 연관되거나 관련이 있는 상수들의 집합
+- 코드가 간략해지고 가독성이 높아진다
+- Instance 생성과 함께 상속을 방지하여 타입 안전성 보장
+- Enum 상수는 고정된 값으로 다른 클래스에서 변경할 수 없음
+
+### OAuth2 Google Login
+- 다른 서비스의 회원 정보를 안전하게 사용하기 위한 방법
+- ID/PW 등 사용자 정보를 알려주지 않아도, 해당 서비스에서 로그인 가능
+    - Ex) Naver, Kakao, Google로 로그인하기
+- 1. 서비스를 등록하는 과정
+    - 1) Google에 자사 서비스 등록하기
+    - 2) 이 과정에서 redirect_uri 등을 합의하기
+- 2. 토큰을 받기 위한 과정
+    - 1) 사용자를 Google 로그인 페이지로 이동시키기
+    - 2) Google이 사용자를 우리 서비스로 리다이렉트 시키기
+- 3. 토큰을 이용해 정보를 요청하는 과정
+```sql
+update user set role = 'USER';
+select * from user;
+```
+> ![image](https://user-images.githubusercontent.com/20378368/130082102-66112867-975f-4c6c-8b7b-036c32be89cc.png)
+
