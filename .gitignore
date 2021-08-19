@@ -1,2 +1,5 @@
 .gradle
 .idea
+application
+application-oauth.properties
+application-real-db.properties
