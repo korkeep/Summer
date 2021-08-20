@@ -1,5 +1,5 @@
-com/korkeep/summer/web/PostsAPIController.java
- com.korkeep.summer.web.PostsAPIController
+com/korkeep/summer/Application.java
+ com.korkeep.summer.Application
 com/korkeep/summer/domain/BaseTimeEntity.java
  com.korkeep.summer.domain.BaseTimeEntity
 com/korkeep/summer/domain/posts/Posts.java
@@ -10,8 +10,10 @@ com/korkeep/summer/config/WebConfig.java
 com/korkeep/summer/domain/user/User.java
  com.korkeep.summer.domain.user.User
  com.korkeep.summer.domain.user.User$UserBuilder
-com/korkeep/summer/web/dto/HelloResponseDTO.java
- com.korkeep.summer.web.dto.HelloResponseDTO
+com/korkeep/summer/web/PostsAPIController.java
+ com.korkeep.summer.web.PostsAPIController
+com/korkeep/summer/config/JPAConfig.java
+ com.korkeep.summer.config.JPAConfig
 com/korkeep/summer/config/auth/CustomOAuth2UserService.java
  com.korkeep.summer.config.auth.CustomOAuth2UserService
 com/korkeep/summer/web/HelloController.java
@@ -47,7 +49,5 @@ com/korkeep/summer/domain/user/UserRepository.java
  com.korkeep.summer.domain.user.UserRepository
 com/korkeep/summer/service/posts/PostsService.java
  com.korkeep.summer.service.posts.PostsService
-com/korkeep/summer/Application.java
- com.korkeep.summer.Application
-com/korkeep/summer/config/JPAConfig.java
- com.korkeep.summer.config.JPAConfig
+com/korkeep/summer/web/dto/HelloResponseDTO.java
+ com.korkeep.summer.web.dto.HelloResponseDTO
