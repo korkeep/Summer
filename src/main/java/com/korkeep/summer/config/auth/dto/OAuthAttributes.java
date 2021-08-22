@@ -39,13 +39,13 @@ public class OAuthAttributes {
                 .build();
     }
 
-    // toEntity: User Entity 생성, 처음 가입할 때 호출되고 Role을 GUEST로 설정 -> 글쓰기 권한 없음
+    // toEntity: User Entity 생성, 처음 가입할 때 호출되고 Role을 USER로 설정
     public User toEntity() {
         return User.builder()
                 .name(name)
                 .email(email)
                 .picture(picture)
-                .role(Role.GUEST)
+                .role(Role.USER)
                 .build();
     }
 }

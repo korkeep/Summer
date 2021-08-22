@@ -2,10 +2,7 @@ package com.korkeep.summer.service.posts;
 
 import com.korkeep.summer.domain.posts.Posts;
 import com.korkeep.summer.domain.posts.PostsRepository;
-import com.korkeep.summer.web.dto.PostsListResponseDTO;
-import com.korkeep.summer.web.dto.PostsResponseDTO;
-import com.korkeep.summer.web.dto.PostsSaveRequestDTO;
-import com.korkeep.summer.web.dto.PostsUpdateRequestDTO;
+import com.korkeep.summer.web.dto.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

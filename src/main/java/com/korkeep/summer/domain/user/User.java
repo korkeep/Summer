@@ -1,6 +1,6 @@
 package com.korkeep.summer.domain.user;
 
-import com.korkeep.summer.domain.BaseTimeEntity;
+import com.korkeep.summer.domain.entity.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

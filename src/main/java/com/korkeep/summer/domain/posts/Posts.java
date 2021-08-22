@@ -1,6 +1,6 @@
 package com.korkeep.summer.domain.posts;
 
-import com.korkeep.summer.domain.BaseTimeEntity;
+import com.korkeep.summer.domain.entity.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,14 +30,19 @@ public class Posts extends BaseTimeEntity {
     private String title;
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String author;
+    @Column
+    private Long fileId;
 
     // Builder: Builder 패턴으로 생성 시점에 값을 채워주는 역할
     @Builder
-    public Posts(String title, String content, String author){
+    public Posts(String title, String content, String author, Long id, Long fileId){
+        this.id = id;
+        this.author = author;
         this.title = title;
         this.content = content;
-        this.author = author;
+        this.fileId = fileId;
     }
 
     public void update(String title, String content) {

@@ -12,13 +12,16 @@ var main = {
         });
     },
     save : function () {
+        var form = $('#fileUploadForm')[0];
         var data = {
             title: $('#title').val(),
             author: $('#author').val(),
-            content: $('#content').val()
+            content: $('#content').val(),
+            formData: new FormData(form)
         };
         $.ajax({
             type: 'POST',
+            enctype: 'multipart/form-data',
             url: '/api/v1/posts',
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
