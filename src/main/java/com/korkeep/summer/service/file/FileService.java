@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
 
 @Service
 public class FileService {
-    private FileRepository fileRepository;
+    private final FileRepository fileRepository;
 
     public FileService(FileRepository fileRepository) {
         this.fileRepository = fileRepository;

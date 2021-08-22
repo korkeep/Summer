@@ -1,6 +1,6 @@
 package com.korkeep.summer.domain.posts;
 
-import com.korkeep.summer.domain.entity.BaseTimeEntity;
+import com.korkeep.summer.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,8 +45,9 @@ public class Posts extends BaseTimeEntity {
         this.fileId = fileId;
     }
 
-    public void update(String title, String content) {
+    public void update(String title, String content, Long fileId) {
         this.title = title;
         this.content = content;
+        this.fileId = fileId;
     }
 }

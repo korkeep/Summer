@@ -24,7 +24,7 @@ public class PostsService {
     @Transactional
     public Long update(Long id, PostsUpdateRequestDTO requestDTO){
         Posts posts = postsRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
-        posts.update(requestDTO.getTitle(), requestDTO.getContent());
+        posts.update(requestDTO.getTitle(), requestDTO.getContent(), requestDTO.getFileId());
         return id;
     }
 
@@ -44,5 +44,18 @@ public class PostsService {
         return postsRepository.findAllDesc().stream()
                 .map(PostsListResponseDTO::new)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public PostsSaveRequestDTO getPost(Long id){
+        Posts posts = postsRepository.findById(id).get();
+
+        return PostsSaveRequestDTO.builder()
+                .id(posts.getId())
+                .author(posts.getAuthor())
+                .title(posts.getTitle())
+                .content(posts.getContent())
+                .fileId(posts.getFileId())
+                .build();
     }
 }

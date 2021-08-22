@@ -26,7 +26,7 @@ public class PostsAPIController {
 //    }
 
     @PostMapping("/api/v1/posts")
-    public Long save(@RequestParam("file") MultipartFile files, @RequestBody PostsSaveRequestDTO requestDTO){
+    public Long save(@RequestParam("file") MultipartFile files, PostsSaveRequestDTO requestDTO){
         try{
             String origFileName = files.getOriginalFilename();
             assert origFileName != null;

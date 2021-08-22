@@ -1,4 +1,4 @@
-package com.korkeep.summer.domain.entity;
+package com.korkeep.summer.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
