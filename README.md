@@ -24,10 +24,19 @@
 - DB 테이블, IO 객체 포함
 <br/>
 
+### SpringBoot
+- Tomcat 등 WAS에 대한 설정 없이 바로 개발에 들어갈 수 있도록 만든 프레임워크
+- CoC: Convention over Configuration, spring-boot-starter-web을 받아오면 라이브러리 받아온다
+- 내장 Tomcat을 지원하므로 JAR 파일로 패키징하여 Web Application 실행 가능
+- pom.xml에 스프링부트 버전을 입력하면 서드파티 라이브러리도 호환되는 버전으로 자동 다운됨
+- Annotation을 통해 spring 설정을 자동으로 등록해줄 수 있음
+<br/>
+
 ### Spring Bean
 > ![bean](https://user-images.githubusercontent.com/20378368/128664936-db8822bc-4539-4136-8b57-baef94134004.png)
 - Bean: Spring IoC 컨테이너가 관리하는 JAVA 객체
 - IoC: Inversion of Control, 객체 생성을 관리 위임 주체에게 이관
+- 외부 라이브러리의 코드가 프로그래머가 작성한 코드를 호출
 - Bean은 Spring에 의하여 생성되고 관리되는(IoC) JAVA 객체
 - @Autowired, Setter, Constructor 등으로 Spring으로부터 Bean 주입받음
 <br/>
@@ -61,12 +70,14 @@ select * from posts;
 
 ### JPA, Hibernate, Spring Data JPA (Repository)
 > ![JPA-Hibernate-Repository](https://user-images.githubusercontent.com/20378368/128971468-ffb03907-7f52-49d6-b4e2-62b37e9944c2.png)
+<br/>
 
 ### Enum Class
 - 서로 연관되거나 관련이 있는 상수들의 집합
 - 코드가 간략해지고 가독성이 높아진다
 - Instance 생성과 함께 상속을 방지하여 타입 안전성 보장
 - Enum 상수는 고정된 값으로 다른 클래스에서 변경할 수 없음
+<br/>
 
 ### OAuth2 Google Login
 - 다른 서비스의 회원 정보를 안전하게 사용하기 위한 방법
