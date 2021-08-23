@@ -12,22 +12,30 @@ var main = {
         });
     },
     save : function () {
-        var data = {
-            title: $('#title').val(),
-            author: $('#author').val(),
-            content: $('#content').val()
-        };
+        const url = $("#posts-save").attr("action");
+        const files = $('#customFile')[0].files[0];
+        const formData = new FormData();
+        formData.append("files", files);
+        formData.append("title",  $('#title').val());
+        formData.append("author", $('#author').val());
+        formData.append("content", $('#content').val());
+
         $.ajax({
+            url: url,
             type: 'POST',
-            url: '/api/v1/posts',
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('글이 등록되었습니다.');
-            window.location.href = '/';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
+            data: formData,
+
+            success: function(){
+                console.log("success");
+                alert('글이 등록되었습니다.');
+                window.location.href = '/';
+            },
+            error: function(error){
+                alert(error);
+            },
+            cache: false,
+            contentType: false,
+            processData: false
         });
     },
     update : function () {
