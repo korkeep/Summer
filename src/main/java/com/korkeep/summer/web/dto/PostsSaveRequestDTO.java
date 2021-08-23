@@ -5,12 +5,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
 @NoArgsConstructor
 public class PostsSaveRequestDTO {
     private Long id;
+    private MultipartFile files;
     private String title;
     private String content;
     private String author;
@@ -18,15 +20,16 @@ public class PostsSaveRequestDTO {
 
     // Builder: Builder 패턴으로 생성 시점에 값을 채워주는 역할
     @Builder
-    public PostsSaveRequestDTO(String title, String content, String author, Long id, Long fileId){
+    public PostsSaveRequestDTO(Long id, MultipartFile files, String title, String content, String author, Long fileId) {
         this.id = id;
-        this.author = author;
+        this.files = files;
         this.title = title;
         this.content = content;
+        this.author = author;
         this.fileId = fileId;
     }
 
-    public Posts toEntity(){
+    public Posts toEntity() {
         return Posts.builder()
                 .id(id)
                 .title(title)
